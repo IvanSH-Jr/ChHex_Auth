@@ -13,4 +13,4 @@ const decoder = (base64Key) => {
     return result;
 };
 
-module.exports = { decoder };
+export default decoder;

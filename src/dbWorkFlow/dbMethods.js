@@ -1,5 +1,5 @@
-const dbConfig = require('./dbconfig');
-const decoderBase64 = require('./decoderBase64');
+import decoder from './decoderBase64.js';
+import postgres from './dbconfig.js';
 
 const selectAll = async () =>  {
     const selectString = `
@@ -25,8 +25,9 @@ const addToTable = async (chhexData) => {
 };
 
 const isUniq = async (req = null, res) => {
+    
     const chhexData = req.body;
-    const userInfo = decoderBase64.decoder(req.body.Registration);
+    const userInfo = decoder(req.body.Registration);
     const selectString = `
         SELECT uniqueusers.role
         FROM uniqueusers
@@ -38,8 +39,7 @@ const isUniq = async (req = null, res) => {
     //Запись в БД при входе в ChHex
     await addToTable(chhexData);
     const isExist = new Promise ( (resolve, reject) => {
-        const pool = dbConfig.pool()
-        pool.query(selectString, async (err, res = null) => {
+        postgres.query(selectString, async (err, res = null) => {
             //Пользователя нет в таблице уникальных пользователей, возвращаем false
             if(res === null) return resolve(false);
             //Пользователь есть, возвращаем его уровень доступа
@@ -52,4 +52,4 @@ const isUniq = async (req = null, res) => {
     });
 };
 
-module.exports = { addToTable, selectAll, isUniq };
+export { isUniq };

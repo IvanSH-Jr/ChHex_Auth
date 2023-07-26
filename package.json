@@ -2,6 +2,7 @@
   "name": "authchhex",
   "version": "1.0.0",
   "description": "Server for auth ChHex app",
+  "type": "module",
   "main": "app.js",
   "scripts": {
     "serve": "nodemon app.js",
