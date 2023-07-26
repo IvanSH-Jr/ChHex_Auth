@@ -1,0 +1,24 @@
+{
+  "name": "authchhex",
+  "version": "1.0.0",
+  "description": "Server for auth ChHex app",
+  "main": "app.js",
+  "scripts": {
+    "serve": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivan Shadrin",
+  "license": "ISC",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "cli-color": "^2.0.3",
+    "connect-history-api-fallback": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "pg": "^8.11.1",
+    "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
