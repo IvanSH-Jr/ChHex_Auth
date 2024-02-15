@@ -5,10 +5,8 @@ const {Pool} = pg;
 const config = {
   host: 'localhost',
   user:'postgres',
-  //user: 'aspzbase',
-  database: 'userdb',
+  database: 'ChHex_DB',
   password:'postgres',
-  //password: 'test_password',
   port:5432,
   max: 20,
   idleTimeoutMillis: 30000,

@@ -1,6 +1,12 @@
 import decoder from './decoderBase64.js';
 import postgres from './dbconfig.js';
 
+const dataHandler = (data) => {
+    console.log(data.body);
+    const decodedData = decoder(data.body.Registration);
+    console.log(decodedData)
+}
+
 const selectAll = async () =>  {
     const selectString = `
     SELECT * FROM uniqueusers
@@ -52,4 +58,4 @@ const isUniq = async (req = null, res) => {
     });
 };
 
-export { isUniq };
+export default dataHandler;

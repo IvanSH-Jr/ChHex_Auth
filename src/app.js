@@ -1,4 +1,4 @@
-import { isUniq } from './dbWorkFlow/dbMethods.js';
+import dataHandler from './dbWorkFlow/dbMethods.js';
 
 import clr from 'cli-color';
 import cors from 'cors';
@@ -13,7 +13,7 @@ const startServer = () => {
   app.use(express.urlencoded({extended:true}));
   app.use(express.json());
   
-  app.post("/chhex", isUniq);
+  app.post("/chhex", dataHandler);
   
   const date = new Date;
   console.log(clr.green('Сервер авторизации для программы ChHex'));
