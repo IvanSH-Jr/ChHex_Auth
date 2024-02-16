@@ -1,17 +1,37 @@
-import pg from 'pg';
-const {Pool} = pg;
+import { Sequelize, DataTypes } from 'sequelize';
 
 //Конфиг базы
-const config = {
+const sequelize = new Sequelize('ChHex_DB', 'postgres', 'postgres', {
   host: 'localhost',
-  user:'postgres',
-  database: 'ChHex_DB',
-  password:'postgres',
-  port:5432,
-  max: 20,
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000, 
-}
-const postgres = new Pool(config)
+  dialect: 'postgres',
+  port: 5432,
 
-export default postgres;
+});
+
+const User_Session = sequelize.define( 'User_Session', 
+  {
+      user: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+      email: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+      start: {
+          type: DataTypes.STRING,
+          allowNull: false,  
+      },
+      finish: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+  },
+  {
+      sequelize,
+      modelName: 'User_Session',
+      timestamps: false,
+  }
+);
+
+export { sequelize, User_Session };
