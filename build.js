@@ -3,7 +3,7 @@ import exe from '@angablue/exe';
 const build = exe({
     entry: './bin/chhex.js',
     out: "./build/My Cool App.exe",
-    pkg: ["-C", "GZip", '--debug'], // Specify extra pkg arguments
+    pkg: ["-C", "GZip", '--debug'], // Specify extra pkg argumentsddd
     version: "2.4.2",
     target: "latest-win-x64",
     properties: {
