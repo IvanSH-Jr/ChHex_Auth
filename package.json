@@ -9,6 +9,7 @@
   },
   "scripts": {
     "serve": "nodemon ./bin/chhex.js",
+    "build": "node ./build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ivan Shadrin",
@@ -25,6 +26,7 @@
     "utf8": "^3.0.0"
   },
   "devDependencies": {
+    "@angablue/exe": "^2.1.2",
     "nodemon": "^2.0.22"
   }
 }
