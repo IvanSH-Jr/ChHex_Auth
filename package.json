@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "Server for auth ChHex app",
   "type": "module",
-  "main": "app.js",
+  "main": "index.js",
+  "bin": {
+    "chhex": "./bin/chhex.js"
+  },
   "scripts": {
-    "serve": "nodemon app.js",
+    "serve": "nodemon ./bin/chhex.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ivan Shadrin",

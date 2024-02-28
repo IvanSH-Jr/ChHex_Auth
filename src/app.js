@@ -18,11 +18,7 @@ const startServer = () => {
   const date = new Date;
   console.log(clr.green('Сервер авторизации для программы ChHex'));
   console.log(clr.blue(`Дата запуска сервера: ${clr.yellowBright(date)}`));
-  
-  //prod
-  //app.listen(8080)
-  
-  //dev
+
   app.listen(3000);
 };
 
